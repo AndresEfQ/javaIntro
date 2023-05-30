@@ -9,11 +9,14 @@ public class Ej11 {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Por favor ingresa el primero número");
+        // int num1 = Integer.parseInt(scan.nextLine());
         int num1 = scan.nextInt();
 
         System.out.println("Por favor ingresa el segundo número");
+        // int num2 = Integer.parseInt(scan.nextLine());
         int num2 = scan.nextInt();
 
+        String exitOp2;
         int op;
         String exitOp = "N";
 
@@ -27,7 +30,13 @@ public class Ej11 {
                 System.out.println("5. Salir");
                 System.out.println("Elija opción");
 
-                op = scan.nextInt();
+                // op = scan.nextInt();
+                op = Integer.parseInt(scan.nextLine());
+                // scan.nextLine();
+
+                if (op < 1 || op > 5) {
+                    System.out.println(op + " No es una opción válida, intentelo de nuevo");
+                }
             } while (op < 1 || op > 5);
 
             switch (op) {
@@ -53,9 +62,16 @@ public class Ej11 {
                     break;
                 case 5:
                     do {
-                        //System.out.println();
+                        System.out.println();
                         System.out.println("Está seguro que desea salir del programa?");
-                        exitOp = scan.nextLine();
+
+                        // exitOp = scan.nextLine();
+                        exitOp = scan.next();
+                        System.out.println(scan.hasNext());
+
+                        if (!exitOp.equals("S") && !exitOp.equals("N")) {
+                            System.out.println(exitOp + " No es una opción válida, intentelo de nuevo");
+                        }
                     } while (!exitOp.equals("S") && !exitOp.equals("N"));
                     break;
             }
