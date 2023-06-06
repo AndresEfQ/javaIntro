@@ -51,10 +51,11 @@ public class Ej21 {
         Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < size; i++) {
+            System.out.print("ingresa fila " + (i + 1) + " separada por espacios: ");
             for (int j = 0; j < size; j++) {
-                System.out.print("posición [" + i + "-" + j + "]: ");
-                result[i][j] = Integer.parseInt(sc.nextLine());
+                result[i][j] = Integer.parseInt(sc.next());
             }
+            sc.nextLine();
         }
         return result;
     }
